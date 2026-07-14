@@ -299,11 +299,11 @@ export default function Dashboard() {
                                 "group block w-full border-t border-slate-100 transition " +
                                 (past
                                   ? "cursor-not-allowed bg-slate-50"
-                                  : "hover:bg-brand-50")
+                                  : "hover:bg-brand-50 active:bg-brand-100")
                               }
                             >
-                              <span className="pointer-events-none flex h-full items-center justify-center text-[10px] font-medium text-transparent group-hover:text-brand-500">
-                                {past ? "" : "+ 예약"}
+                              <span className="pointer-events-none flex h-full items-center justify-center text-sm font-medium text-brand-200 transition group-hover:text-brand-600">
+                                {past ? "" : "＋"}
                               </span>
                             </button>
                           );

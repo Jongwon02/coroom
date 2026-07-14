@@ -1,10 +1,29 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import "./globals.css";
+import PWA from "@/components/PWA";
 
 export const metadata: Metadata = {
   title: "나눠방 · 회의실 예약",
   description: "회의실 예약 현황을 한눈에 보고 빈 시간을 눌러 바로 예약하세요.",
+  manifest: "/manifest.webmanifest",
+  applicationName: "나눠방",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "나눠방",
+  },
+  icons: {
+    icon: "/icon.svg",
+    apple: "/icon.svg",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#8fc4ea",
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -46,6 +65,7 @@ export default function RootLayout({
         <footer className="mx-auto max-w-7xl px-4 py-8 text-center text-xs text-slate-400">
           나눠방 · 회의실 1~6번 예약 시스템
         </footer>
+        <PWA />
       </body>
     </html>
   );
